@@ -20,5 +20,7 @@ public class TaskFour {
 
         Rectangle rectangle2 = createRectangle(5,8);
         printResult(rectangle2);
+
+        System.out.println();
     }
 }

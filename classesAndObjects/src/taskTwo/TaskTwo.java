@@ -1,6 +1,6 @@
 package taskTwo;
 
-public class TaskTwo {
+public class TaskTwo{
     private static Student createStudent(int id, String name, String address, String phoneNumber){
         Student result = new Student();
         result.id = id;
@@ -22,6 +22,7 @@ public class TaskTwo {
 
         Student john = createStudent(2, "John", "Kirova 6a", "112");
         printStudentData(john);
+        System.out.println();
     }
 
 

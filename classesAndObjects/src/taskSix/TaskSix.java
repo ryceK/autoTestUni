@@ -41,5 +41,6 @@ public class TaskSix {
         int z = readData("third");
 
         System.out.println("Average value of entered numbers is " + Average.average(x,y,z));
+        System.out.println();
     }
 }

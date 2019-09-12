@@ -47,5 +47,6 @@ public class TaskFive {
         System.out.println("In order to calculate the area of a rectangle we need to collect some data.");
         area.setDim(readData("breadth"), readData("length"));
         System.out.println("The area of the rectangle with breadth " + area.breadth + " and length " + area.length + " is " + area.getArea());
+        System.out.println();
     }
 }

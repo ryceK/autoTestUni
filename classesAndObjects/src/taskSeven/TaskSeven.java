@@ -64,6 +64,7 @@ public class TaskSeven {
         printEmployeedata(alexander,viewerRank);
         printEmployeedata(maria,viewerRank);
         printEmployeedata(ilona,viewerRank);
-    }
 
+        System.out.println();
+    }
 }
