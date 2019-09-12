@@ -1,4 +1,4 @@
-package taskFifteen;
+package classesAndObjects.taskFifteen;
 
 public class TaskFifteen {
     public static void main(String[] args){

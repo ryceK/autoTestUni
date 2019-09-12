@@ -1,4 +1,4 @@
-package taskFour;
+package classesAndObjects.taskFour;
 
 public class Rectangle {
     static int breadth, length;

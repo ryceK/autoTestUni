@@ -1,9 +1,8 @@
-package taskFive;
-
-import taskFour.Rectangle;
+package classesAndObjects.taskFive;
 
 public class Area {
-    int breadth, length;
+    public int breadth;
+    public int length;
 
     public void setDim(int breadth, int length){
         this.breadth = breadth;

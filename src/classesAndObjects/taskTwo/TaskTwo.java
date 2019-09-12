@@ -1,7 +1,8 @@
-package taskTwo;
+package classesAndObjects.taskTwo;
 
-public class TaskTwo{
-    private static Student createStudent(int id, String name, String address, String phoneNumber){
+public class TaskTwo {
+
+    private static Student createStudent(int id, String name, String address, String phoneNumber) {
         Student result = new Student();
         result.id = id;
         result.name = name;
@@ -10,11 +11,11 @@ public class TaskTwo{
         return result;
     }
 
-    private static void printStudentData(Student student){
+    private static void printStudentData(Student student) {
         System.out.println("ID: " + student.id + "; Name: " + student.name + "; Address: " + student.address + "; Phone number: " + student.phoneNumber + ";");
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Doing Task 2: Assign and print the id, phone number and address of two students having names \"Sam\" and \"John\" respectively by creating two objects of class 'Student'.");
 
         Student sam = createStudent(1, "Sam", "Kirova 11", "911");
@@ -24,6 +25,4 @@ public class TaskTwo{
         printStudentData(john);
         System.out.println();
     }
-
-
 }
