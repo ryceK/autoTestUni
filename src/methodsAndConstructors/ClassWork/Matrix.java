@@ -106,11 +106,11 @@ public class Matrix {
             System.out.println("can not be multiplied.");
             return null;
         }
-        int[][] result = new int[matrix1.rows][matrix2.columns];
+        int[][] result = new int[matrix1.columns][matrix2.rows];
         for (int i = 0; i < result.length; i++){
             for (int j = 0; j < result[i].length; j++){
-                int[] matrix1row = matrix1.getRow(i);
-                int[] matrix2column = matrix2.getColumn(j);
+                int[] matrix1row = matrix1.getColumn(i);
+                int[] matrix2column = matrix2.getRow(j);
                 for (int k = 0; k < matrix1row.length; k++){
                     result[i][j] += matrix1row[k] * matrix2column[k];
                 }
@@ -118,6 +118,30 @@ public class Matrix {
         }
         return result;
     }
+
+    public static int[][] multiplyMatricesV2(Matrix matrix1, Matrix matrix2){
+        if (matrix1.rows != matrix2.columns){
+            System.out.println("Matrices:");
+            matrix1.print();
+            System.out.println("and");
+            matrix2.print();
+            System.out.println("can not be multiplied.");
+            return null;
+        }
+        int[][] result = new int[matrix1.columns][matrix2.rows];
+        int sum = 0;
+        for (int i = 0; i < result.length; i++){
+            for (int j = 0; j < result[i].length; j++){
+                for (int k = 0; k < matrix1.rows; k++){
+                    sum += matrix1.matrix[k][i] * matrix2.matrix[j][k];
+                }
+                result[i][j] = sum;
+                sum = 0;
+            }
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         createSumAndPrint();
@@ -134,6 +158,8 @@ public class Matrix {
         m2.print();
         System.out.println("The multiplied matrix is:");
         Matrix.printMatrix(Matrix.multiplyMatrices(m1,m2));
+        System.out.println("The multiplied matrixV2 is:");
+        Matrix.printMatrix(Matrix.multiplyMatricesV2(m1,m2));
     }
 
     private static void createSumAndPrint() {
