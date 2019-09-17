@@ -98,12 +98,7 @@ public class Matrix {
     }
 
     public static int[][] multiplyMatrices(Matrix matrix1, Matrix matrix2){
-        if (matrix1.rows != matrix2.columns){
-            System.out.println("Matrices:");
-            matrix1.print();
-            System.out.println("and");
-            matrix2.print();
-            System.out.println("can not be multiplied.");
+        if (!canBeMultiplied(matrix1, matrix2)) {
             return null;
         }
         int[][] result = new int[matrix1.columns][matrix2.rows];
@@ -120,12 +115,7 @@ public class Matrix {
     }
 
     public static int[][] multiplyMatricesV2(Matrix matrix1, Matrix matrix2){
-        if (matrix1.rows != matrix2.columns){
-            System.out.println("Matrices:");
-            matrix1.print();
-            System.out.println("and");
-            matrix2.print();
-            System.out.println("can not be multiplied.");
+        if (!canBeMultiplied(matrix1, matrix2)) {
             return null;
         }
         int[][] result = new int[matrix1.columns][matrix2.rows];
@@ -140,6 +130,19 @@ public class Matrix {
             }
         }
         return result;
+    }
+
+    private static boolean canBeMultiplied(Matrix matrix1, Matrix matrix2) {
+        if (matrix1.rows != matrix2.columns) {
+            System.out.println("Matrices:");
+            matrix1.print();
+            System.out.println("and");
+            matrix2.print();
+            System.out.println("can not be multiplied.");
+            return false;
+        } else {
+            return true;
+        }
     }
 
 
