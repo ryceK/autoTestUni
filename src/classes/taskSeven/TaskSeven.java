@@ -1,4 +1,4 @@
-package classesAndObjects.taskSeven;
+package classes.taskSeven;
 
 public class TaskSeven {
     private static Employee createEmployee(String name, String address, int year, int salary){

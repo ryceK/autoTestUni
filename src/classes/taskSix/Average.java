@@ -1,4 +1,4 @@
-package classesAndObjects.taskSix;
+package classes.taskSix;
 
 class Average {
     static int average(int x, int y, int z){

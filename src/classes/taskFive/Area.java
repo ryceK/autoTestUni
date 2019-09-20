@@ -1,4 +1,4 @@
-package classesAndObjects.taskFive;
+package classes.taskFive;
 
 public class Area {
     public int breadth;

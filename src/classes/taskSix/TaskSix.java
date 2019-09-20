@@ -1,13 +1,13 @@
-package classesAndObjects.taskFive;
+package classes.taskSix;
 
-public class TaskFive {
-    private static int readData(String side){
+public class TaskSix {
+    private static int readData(String order){
         int result = 0;
         try {
             do {
-                System.out.println("Please enter the desired " + side);
+                System.out.println("Please enter the desired value for the " + order + " number");
 
-                byte[] b = new byte[1000];
+                byte[] b = new byte[100];
                 int readByte = System.in.read(b);
                 String input = new String(b).trim();
                 if (readByte > 0) {
@@ -34,12 +34,13 @@ public class TaskFive {
     }
 
     public static void main(String[] args){
-        System.out.println("Doing Task 5: Write a program to print the area of a rectangle by creating a class named 'Area' having two methods. First method named as 'setDim' takes length and breadth of rectangle as parameters and the second method named as 'getArea' returns the area of the rectangle. Length and breadth of rectangle are entered through keyboard");
+        System.out.println("Doing Task 6: Print the average of three numbers entered by user by creating a class named 'Average' having a method to calculate and print the average.");
 
-        Area area = new Area();
-        System.out.println("In order to calculate the area of a rectangle we need to collect some data.");
-        area.setDim(readData("breadth"), readData("length"));
-        System.out.println("The area of the rectangle with breadth " + area.breadth + " and length " + area.length + " is " + area.getArea());
+        int x = readData("first");
+        int y = readData("second");
+        int z = readData("third");
+
+        System.out.println("Average value of entered numbers is " + Average.average(x,y,z));
         System.out.println();
     }
 }

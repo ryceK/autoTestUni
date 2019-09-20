@@ -1,4 +1,4 @@
-package classesAndObjects.taskFour;
+package classes.taskFour;
 
 public class TaskFour {
     private static Rectangle createRectangle(int breadth, int length){

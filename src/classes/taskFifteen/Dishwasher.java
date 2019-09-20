@@ -1,6 +1,7 @@
-package classesAndObjects.taskFifteen;
+package classes.taskFifteen;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dishwasher {
     OperatingStatus operatingStatus = OperatingStatus.STOPPED;
