@@ -1,9 +1,22 @@
 package classes.taskFour;
 
 public class Rectangle {
-    static int breadth, length;
+    private int breadth, length;
 
-    public static int getArea(){
+    public Rectangle(int breadth, int length) {
+        this.breadth = breadth;
+        this.length = length;
+    }
+
+    public int getBreadth() {
+        return breadth;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getArea(){
         return breadth * length;
     }
 }
