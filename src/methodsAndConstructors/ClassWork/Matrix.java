@@ -78,58 +78,64 @@ public class Matrix {
         }
     }
 
-    void printIntArray(int[] input){
-        for (int i = 0; i < input.length; i++){
-            System.out.print(input[i] + " ");
-        }
-    }
-
     static void printMatrix(int[][] matrix){
         if (matrix == null){
             System.out.println("Nothing to print!");
             return;
         }
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
+        for (int[] column : matrix
+        ) {
+            for (int element : column
+            ) {
+                System.out.print(element + " ");
             }
             System.out.println();
         }
     }
 
     public static int[][] multiplyMatrices(Matrix matrix1, Matrix matrix2){
-        if (!canBeMultiplied(matrix1, matrix2)) {
-            return null;
-        }
         int[][] result = new int[matrix1.columns][matrix2.rows];
-        for (int i = 0; i < result.length; i++){
-            for (int j = 0; j < result[i].length; j++){
-                int[] matrix1row = matrix1.getColumn(i);
-                int[] matrix2column = matrix2.getRow(j);
-                for (int k = 0; k < matrix1row.length; k++){
-                    result[i][j] += matrix1row[k] * matrix2column[k];
+        if (canBeMultiplied(matrix1, matrix2)) {
+            for (int i = 0; i < result.length; i++){
+                for (int j = 0; j < result[i].length; j++){
+                    int[] matrix1row = matrix1.getColumn(i);
+                    int[] matrix2column = matrix2.getRow(j);
+                    for (int k = 0; k < matrix1row.length; k++){
+                        result[i][j] += matrix1row[k] * matrix2column[k];
+                    }
                 }
             }
+        } else {
+            return null;
         }
+
         return result;
     }
 
     public static int[][] multiplyMatricesV2(Matrix matrix1, Matrix matrix2){
-        if (!canBeMultiplied(matrix1, matrix2)) {
+        int[][] result = new int[matrix1.columns][matrix2.rows];
+        if (canBeMultiplied(matrix1, matrix2)) {
+            int sum = 0;
+            for (int i = 0; i < result.length; i++) {
+                for (int j = 0; j < result[i].length; j++) {
+                    for (int k = 0; k < matrix1.rows; k++) {
+                        sum += matrix1.matrix[k][i] * matrix2.matrix[j][k];
+                    }
+                    result[i][j] = sum;
+                    sum = 0;
+                }
+            }
+        } else {
             return null;
         }
-        int[][] result = new int[matrix1.columns][matrix2.rows];
-        int sum = 0;
-        for (int i = 0; i < result.length; i++){
-            for (int j = 0; j < result[i].length; j++){
-                for (int k = 0; k < matrix1.rows; k++){
-                    sum += matrix1.matrix[k][i] * matrix2.matrix[j][k];
-                }
-                result[i][j] = sum;
-                sum = 0;
-            }
-        }
         return result;
+    }
+
+    void printIntArray(int[] input){
+        for (int number: input
+             ) {
+            System.out.print(number + " ");
+        }
     }
 
     private static boolean canBeMultiplied(Matrix matrix1, Matrix matrix2) {

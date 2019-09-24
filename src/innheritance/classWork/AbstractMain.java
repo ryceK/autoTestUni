@@ -11,8 +11,8 @@ public class AbstractMain {
 
         Animal[] animals = new Animal[]{c,d,cw};
 
-        for (int i = 0; i < animals.length; i++) {
-            animals[i].saySmth();
+        for (Animal animal : animals) {
+            animal.saySmth();
         }
     }
 }

@@ -22,8 +22,8 @@ public class ArrayAverage {
 
     public double getAverage(){
         double sum = 0;
-        for (int x = 0; x < array.length; x++){
-            sum += array[x];
+        for (int number : array) {
+            sum += number;
         }
         return sum / array.length;
     }
