@@ -18,3 +18,4 @@ public class TextPost extends Post implements Printable{
         System.out.println("Printing: " + this.post);
     }
 }
+
