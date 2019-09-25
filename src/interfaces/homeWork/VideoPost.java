@@ -2,8 +2,13 @@ package interfaces.homeWork;
 
 import java.util.Date;
 
-public class VideoPost extends MediaPost {
+public class VideoPost extends MediaPost implements Playable{
     public VideoPost(String author, Object post, Date date, MessageType messageType) {
         super(author, post, date, messageType);
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Palying: " + this.post);
     }
 }
