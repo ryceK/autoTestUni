@@ -1,27 +1,27 @@
 package wrappersAndGenerics.homeWork.taskTwo;
 
 public class PairErasedTypes {
-    private Object o;
-    private Comparable c;
+    private Object key;
+    private Comparable value;
 
-    public PairErasedTypes(Object o, Comparable c) {
-        this.o = o;
-        this.c = c;
+    public PairErasedTypes(Object key, Comparable value) {
+        this.key = key;
+        this.value = value;
     }
 
-    public Object getO() {
-        return o;
+    public Object getKey() {
+        return key;
     }
 
-    public void setO(Object o) {
-        this.o = o;
+    public void setKey(Object key) {
+        this.key = key;
     }
 
-    public Comparable getC() {
-        return c;
+    public Comparable getValue() {
+        return value;
     }
 
-    public void setC(Comparable c) {
-        this.c = c;
+    public void setValue(Comparable value) {
+        this.value = value;
     }
 }
